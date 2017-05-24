@@ -6,229 +6,129 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Form Validation Example</title>
-        <meta name="description" content="An example of inline form validation.">
+        <title>Hiking is FUN!</title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css"><!-- Do not edit the bootstrap files! -->
         <style>
             body {
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <link rel="stylesheet" href="css/main.css"><!-- Make your edits in the main.css file. -->
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+           
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Form Validation</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Hiking is FUN!</a>
         </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-right user-info">Welcome, <span class="user-fullname">First Last</span> <a class="btn btn-default btn-sm">Logout</a></div>
+          <form class="navbar-form navbar-right" role="form" id="login-form">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <a class="btn btn-default btn-sm">Login</a>
+          </form>
+        </div><!--/.navbar-collapse -->
       </div>
     </nav>
 
-    <div class="container">
-      <p class="lead">Please note: This form is only for validation demonstration purposes. Do not enter real payment information; please use imaginary data.</p>
-      <form class="form-horizontal" role="form" action="thank-you.html" method="get" id="order-form">
-      <!-- TODO: Add a general validation check so that any field contained in a `div.form-group. required` will be required to have information when the user submits the form. -->
-        <fieldset>
-          <legend>Your Information</legend>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="your-name"><span class="glyphicon glyphicon-question-sign" title="Your first and last name."></span> Your Name</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-name" id="your-name" placeholder="Your Name">
-            </div>
-            <!-- TODO: Make validation for name according to these rules:
-                 * Name must be fewer than 128 characters.
-                 * Name may not contain any numbers.
-                 -->
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="your-address">Street Address</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-address" id="your-address" placeholder="Your Street Address">
-            </div>
-            <!-- TODO: Make validation for street address according to these rules:
-                  * Field must not be blank
-                  -->
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="your-address2">Street Address (additional)</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-address2" id="your-address2" placeholder="Your Street Address (additional)">
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="your-city">City</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-city" id="your-city" placeholder="Your City">
-            </div>
-            <!-- TODO: Make validation for city according to these rules:
-                  * Field must not be blank
-                  -->
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="your-state"><span class="glyphicon glyphicon-question-sign" title="Two-letter state abbreviation."></span> State</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-state" id="your-state" placeholder="Your State">
-            </div>
-            <!-- TODO: Make validation for state according to these rules:
-                  * Field must not be blank
-                  * Field must contain exactly two letters
-                  * (Stretch Goal: If possible, verify that the 2-letter combo matches with known state abbreviations.)
-                  -->
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="your-zip"><span class="glyphicon glyphicon-question-sign" title="US ZIP code only."></span> ZIP</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="your-zip" id="your-zip" placeholder="Your ZIP Code">
-            </div>
-            <!-- TODO: Make validation for ZIP according to these rules:
-                  * Field must not be blank
-                  * Field must be an integer (only whole numbers)
-                  * Field must have 5 digits
-                  -->
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Payment</legend>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="card-holder-name"><span class="glyphicon glyphicon-question-sign" title="First and last name shown on card."></span> Name on Card</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
-            </div>
-            <!-- TODO: Make validation for name on card according to these rules:
-                  * Field must not be blank
-                  * Field must conform to same name requirements as above.
-                  -->
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="card-number"><span class="glyphicon glyphicon-question-sign" title="Test card number: 0000 0000 0000 0000"></span> Card Number</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
-            </div>
-            <!-- TODO: Make validation for card number according to these rules:
-                  * Field must not be blank
-                  * Field must contain only numbers and spaces (no other characters)
-                  * Field must contain 16 digits
-
-                  WHEN TESTING THIS, USE THE UNIVERSAL TEST CARD NUMBER:
-                  0000 0000 0000 0000
-                  -->
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
-            <div class="col-sm-9">
-              <div class="row">
-                <div class="col-xs-3">
-                  <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
-                    <option>Month</option>
-                    <option value="01">Jan (01)</option>
-                    <option value="02">Feb (02)</option>
-                    <option value="03">Mar (03)</option>
-                    <option value="04">Apr (04)</option>
-                    <option value="05">May (05)</option>
-                    <option value="06">June (06)</option>
-                    <option value="07">July (07)</option>
-                    <option value="08">Aug (08)</option>
-                    <option value="09">Sep (09)</option>
-                    <option value="10">Oct (10)</option>
-                    <option value="11">Nov (11)</option>
-                    <option value="12">Dec (12)</option>
-                  </select>
-                </div>
-                <div class="col-xs-3">
-                  <select class="form-control" name="expiry-year">
-                    <option value="15">2015</option>
-                    <option value="16">2016</option>
-                    <option value="17">2017</option>
-                    <option value="18">2018</option>
-                    <option value="19">2019</option>
-                    <option value="20">2020</option>
-                    <option value="21">2021</option>
-                    <option value="22">2022</option>
-                    <option value="23">2023</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <!-- TODO: Make validation for Expiration Date according to these rules:
-                  * Fields must not be blank
-                  -->
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="cvv"><span class="glyphicon glyphicon-question-sign" title="Three-digit code from back of card."></span> Card CVV</label>
-            <div class="col-sm-3">
-              <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
-            </div>
-            <!-- TODO: Make validation for CVV according to these rules:
-                  * Field must not be blank
-                  * Field must only contain numbers
-                  * Field must have 3 digits
-                  -->
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Additional Information</legend>
-          <div class="form-group required">
-            <label class="col-sm-3 control-label" for="shipping-method">Shipping Method</label>
-            <div class="col-sm-9">
-              <div class="row">
-                <div class="col-xs-3">
-                  <select class="form-control col-sm-2" name="shipping-method" id="shipping-method">
-                    <option>Select One</option>
-                    <option value="Ground">Ground</option>
-                    <option value="Air">Air</option>
-                    <option value="Sea">Sea</option>
-                    <option value="Rocket">Rocket</option>
-                    <option value="Pigeon">Pigeon</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <!-- TODO: Make validation for shipping method according to these rules:
-                  * Field must not be blank
-                  -->
-          </div>
-          <div class="form-group">
-            <label class="col-sm-3 control-label" for="comments">Special Instructions</label>
-            <div class="col-sm-9">
-              <textarea cols="80" rows="8" class="form-control" name="comments" id="comments" placeholder="Comments"></textarea>
-            </div>
-            <!-- TODO: Make validation for street address according to these rules:
-                  * Field may be blank
-                  * If field is not blank, it must be less than 500 characters.
-                  * Field may contain any characters
-                  -->
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-9">
-              <button type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-shopping-cart"></span> Check Out!</button>
-            </div>
-          </div>
-        </fieldset>
-      </form>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Join the hike</h1>
+        <p class="bio-dates">Hiking is FUN!</p>
+        <p class="details">
+Whether you've just moved to Washington state, or you've lived here for years and just want to show off Washington's stellar hiking trails to your out-of-state visitors, our list of must-do hikes for is a great place to start. How did we choose these twenty out of the hundreds of incredible trails? It was tough, but taken together, we felt these hikes do a great job of showing off Washington's incredible trail diversity.
+</p>
+        <p>
+          <a class="btn btn-primary btn-lg view-details" href="#" role="button">Learn more &raquo;</a>
+        </p>
+      </div>
     </div>
-    <div class="container">
+
+    <div class="container highlights">
+      <!-- Example row of columns -->
+      <div class="debugging">
+        <h2>#1</h2>
+        <p class="teaser">Horseshoe Basin</p>
+        <img class="pull-right img-thumbnail" src="img/horseshoebasin.jpg">
+        <p class="details">
+Location: North Cascades - East Slope
+Round Trip: 12 miles
+Elevation Gain: 1550’
+Highest Point: 7200'
+Best Season: July-October
+
+A backpacking favorite where you can spend a day—or a week—exploring the wonders of this alpine landscape. Climb the local peaks, check out the Canadian border monuments, or kick back and watch the marmots. At night, listen for the coyotes and count stars.
+</p>
+        <p><a class="btn btn-default view-details" role="button">View details &raquo;</a></p>
+      </div>
       <hr>
+      <div class="quotes">
+        <h2>#2</h2>
+        <p class="teaser">Rialto Beach and Hole-in-the-Wall</p>   
+          <img class="pull-right img-thumbnail" src="img/rialtobeach-holeinthewall.jpg">
+        <p class="details">
+Location: Olympic Coast
+Round Trip: 4 miles
+Best Season: Year-round
 
+With so many mountain hikes to choose from, many hikers forget about the glories of Washington's coast. There is some incredible coastal hiking all the way up and down the coast, but this little slip of the wild Olympic Coast is a classic. Plus, it's great for kids.
+        </p>
+        <p><a class="btn btn-default view-details" role="button">View details &raquo;</a></p>
+      </div>
+      <hr>
+       <div class="quotes">
+        <h2>#3</h2>
+        <p class="teaser">Hoh Rainforest Trail</p>   
+          <img class="pull-right img-thumbnail" src="img/hohrainforesttrail.jpg">
+        <p class="details">
+Location: Olympic National Park
+Distance: up to 10.6 miles RT
+Elevation Gain: 500 ft. 
+Season: Year-round
+
+There is something incredibly magical about the Hoh. The huge trees, the cascading moss, the birds and Roosevelt elk, the Olympic Mountains rising above and the broad river valley extending up and downstream, all make this a hike that must be done at least once in a lifetime. The trail is easy too - minimal elevation gain, good tread and an open understory. 
+        </p>
+        <p><a class="btn btn-default view-details" role="button">View details &raquo;</a></p>
+      </div>
+      <hr>
+      
+      
+      
+      
+      
+      
+      
+   
       <footer>
-        <p>&copy; Jane Student 2015</p>
-      </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/vendor/jquery.validate.min.js"></script>
-
+        <p id="webdev"><i>&copy; George Beck, 2017.</i> This page was made for <a href="http://webdev.seattleu.edu/courses.html">WATS1010: Introduction to Web Development</a>. 
+          Content: <a href="http://webdev.seattleu.edu/"> Seattle University Web Development Program</a>.</p> 
+	    </footer>
+      
+    </div> <!-- /container -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
         <script src="js/main.js"></script>
+      
     </body>
 </html>
