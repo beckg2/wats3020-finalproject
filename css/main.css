@@ -1,9 +1,3 @@
-
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
 /* Styles to hide content that should not be visible until the user takes an action. */
 .user-info {
     display: none;
@@ -12,7 +6,7 @@
     display: none;
 }
 
-/* Styles to make the page look OK. */
+/* Styles for the page. */
 .form-control {
     height: 25px;
 }
@@ -32,4 +26,3 @@
 .voting .voting-buttons {
     margin: 1em 0;
 }
-/* End of styles to make the page look OK. */
